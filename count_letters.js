@@ -11,7 +11,7 @@ function onlyUnique(value, index, self) {
     return self.indexOf(value) === index;
 }
 
-function countEachLettr(str) {
+function countEachLetter(str) {
     letters = {
         a: 0,
         b: 0,
@@ -48,19 +48,18 @@ function countEachLettr(str) {
     var caracteres = []
     for(x = 0; x < str_array.length; x++) {
         letra = str_array[x];
-        var count = 0;
-        for(y = 0; y < str_array.length; y++) {
-            if(letra == str_array[y]) {
-                count++
-            }
-        }
-        var texto = letra + ": " + count
-        caracteres.push(texto)
+        caracteres.push(letra)
     }
-    return caracteres.filter(onlyUnique)
+    for(var i = 0; i < caracteres.length; i++){
+        //aqui se hace un arreglo de la palabra
+        let arr = [...caracteres[i].toLowerCase()];
+        arr.forEach(element => letters[element]+=1 );
+    }
+    return letters
 }
 
-var text2 = 'bla bla'
 
-console.log(countEachLettr(text2))
 
+
+var text1 = 'bla bla'
+console.log(countEachLetter(text1)
