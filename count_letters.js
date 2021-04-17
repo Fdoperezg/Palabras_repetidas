@@ -62,4 +62,4 @@ function countEachLetter(str) {
 
 
 var text1 = 'bla bla'
-console.log(countEachLetter(text1)
+console.log(countEachLetter(text1))
