@@ -8,4 +8,6 @@ console.log (countWords(entrada))
 
 var words_quantity = countWords(entrada)
 
-document.getElementById('resultados').innerHTML
+var texto_del_link = document.createTextNode(words_quantity);
+
+document.getElementById('resultados').appendChild(texto_del_link)
