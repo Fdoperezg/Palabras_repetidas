@@ -23,4 +23,4 @@ var words_quantity = countWords(entrada)
 
 var texto_del_link = document.createTextNode(words_quantity);
 
-document.getElementById('resultados').appendChild("Cantidad de palabras" + texto_del_link)
+document.getElementById('resultados').appendChild(texto_del_link)
