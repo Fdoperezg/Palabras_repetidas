@@ -4,6 +4,9 @@ function countWords(str) {
 }
 
 function ListWords(str) {
+    str = str.trim();
+    str = str.toLowerCase();
+    str = str.replace(/\w+\s*[\.]{3}/g, " ")
     var palabras = contar_palabras(str)
     var resultados = document.getElementById('resultados')
     var unicos = []
