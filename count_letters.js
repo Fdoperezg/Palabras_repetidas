@@ -1,18 +1,12 @@
-var txt = "This is an example of string to count characters"
-    count = 0;
-
-for (var i = 0; i < txt.length; i++) {
-    if(txt.charAt(i) === 'e') {
-        count++;
-    }
-}
-console.log(count);
-
-/* This one here can count letters instead of words 
+//This one here can count letters instead of words 
 function letterCount(str) {
+    str = str.trim();
+    str = str.toLowerCase();
+    str = str.replace(new RegExp(' ','g'),'');
+
     return str.split('').length; //The only difference is that you don't split the string by an space
 }
 
-console.log(letterCount('Hello how are you'))
-*/
+console.log(letterCount('H H hh H    H  '))
+
 
