@@ -4,26 +4,27 @@ function countWords(str) {
 }
 
 function ListWords(str) {
+    str = str.replace(/(\r\n|\,|\.|\n|\r|\s)/gm, " ")
     var palabras = contar_palabras(str)
     var resultados = document.getElementById('resultados')
     var unicos = []
     for(var i = 0; i < palabras.length ; i++){
-        palabra = palabras[i].palabra
-        var cant = 0
-        for(var x = 0; x < palabras.length ; x++){
-          if (palabras[x].palabra == palabra){
-            cant++
-          }
-        }
-
+        if (palabras[i].palabra != "")
+            palabra = palabras[i].palabra
+            var cant = 0
+            for(var x = 0; x < palabras.length ; x++){
+                if (palabras[x].palabra == palabra){
+                cant++
+                }
+            }
         // if ya existe no hay que push
         var sw = 0
         for(var j = 0; j < unicos.length ; j++){
-         var unico = unicos[j]
-         if (unico.palabra == palabra) {
-            sw = 1
+            var unico = unicos[j]
+            if (unico.palabra == palabra) {
+                sw = 1
             // salir de ciclo
-         }
+            }
         }
         if (sw == 0){
             unicos.push(new contadorPalabra(palabra, cant))
@@ -31,7 +32,7 @@ function ListWords(str) {
 
     }
 
-    for(var i = 0; i < unicos.length ; i++){
+    for(var i = 1; i < unicos.length ; i++){
         var palabra = unicos[i];
         
         var strong = document.createElement('strong');
