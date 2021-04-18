@@ -1,9 +1,8 @@
-//This one here can count letters instead of words 
 function letterCount(str) {
     str = str.trim();
     str = str.toLowerCase();
     // str = str.replace(/(\r\n|\,|\.|\n|\r|\s)/gm, " ")
-    str = str.replace(new RegExp(' ','g','|\s'),'');
+    str = str.replace(new RegExp(' ','g','|\s'),''); // Regular exp
 
     str = str.split('')
     var unique = str.filter(onlyUnique);
@@ -88,8 +87,6 @@ function countEachLetter(str) {
         resultados.appendChild(p);
         // 
     }
-
-
 
     return letters
 }
